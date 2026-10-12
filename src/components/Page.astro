@@ -1,0 +1,191 @@
+---
+import Icon from './Icon.astro';
+import { content, WHATSAPP, INSTAGRAM, type Lang } from '../i18n/content';
+const { lang } = Astro.props as { lang: Lang };
+const c = content[lang];
+const navItems = [['retreats', c.nav.retreats], ['about', c.nav.about], ['offer', c.nav.offer], ['training', c.nav.training], ['story', c.nav.story], ['contact', c.nav.contact]];
+const stepIcons = ['goal', 'hello', 'plan', 'climb'];
+const bookIcons = ['climb', 'bed', 'plus', 'coin'];
+const metaIcons = ['pin', 'cal', 'group', 'star'];
+---
+<header class="site" id="top">
+  <a class="logo" href="#hero" aria-label="Grounded Climbing"><Icon name="logo" /> Grounded Climbing</a>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <nav class="main" id="nav">
+    {navItems.map(([id, t]) => <a href={`#${id}`} data-nav={id}>{t}</a>)}
+    <a class="lang" href={c.switch.href} hreflang={lang === 'nl' ? 'en' : 'nl'} lang={lang === 'nl' ? 'en' : 'nl'} aria-label={c.switch.label}>{c.switch.to}</a>
+  </nav>
+</header>
+
+<div id="intro" aria-hidden="true"><div class="a"></div><div class="b"></div><button class="skip">{c.intro.skip}</button></div>
+
+<main>
+  <section id="hero" class="dark">
+    <div class="photo" data-label="Hero — schermvullende foto (canyon / avondlicht)"><div class="inner" data-parallax></div></div>
+    <div class="content wrap">
+      <h1>{c.hero.word}</h1>
+      <p>{c.hero.line}</p>
+      <a class="btn" href="#retreats">{c.hero.cta}</a>
+    </div>
+  </section>
+
+  <section id="values" class="light">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.values.label}</div>
+      <div class="circle" data-circle>
+        <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle class="dot" cx="50" cy="4" r="1.4" data-orbit/></svg>
+        {c.values.items.map((v, i) => <button class="word" aria-pressed={i === 0 ? 'true' : 'false'} data-i={i}>{v.word}</button>)}
+        <div class="detail" aria-live="polite">
+          {c.values.items.map((v, i) => <div hidden={i !== 0} data-detail={i}><small>{v.n} — {v.sub}</small>{v.text}</div>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="retreats" class="dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.retreats.label}</div>
+      <div class="head reveal"><h2>{c.retreats.title}</h2><p>{c.retreats.intro}</p></div>
+      <div class="cols3">
+        {c.retreats.items.map((r) => (
+          <article class="col reveal">
+            <div class="photo" data-label={r.photo}></div>
+            <div class="meta"><span>{r.date}</span><span class="price">{r.price}</span></div>
+            <h3>{r.title}</h3><small>{r.place}</small>
+          </article>
+        ))}
+      </div>
+      <ul class="includes">{c.retreats.includes.map((i) => <li class="reveal">{i}</li>)}</ul>
+      <a class="btn" href="#contact">{c.retreats.more}</a>
+    </div>
+  </section>
+
+  <section id="about" class="light about">
+    <div class="wrap split">
+      <div class="photo warm" data-label={c.about.photo}></div>
+      <div class="reveal">
+        <div class="label"><Icon name="star" />{c.about.label}</div>
+        <h2 style="font-size:clamp(2rem,4.5vw,3.6rem)">{c.about.title}</h2>
+        <p class="lead" style="margin-top:2rem">{c.about.text}</p>
+        <div class="stats">{c.about.stats.map((s) => <div><b>{s.v}</b><span>{s.l}</span></div>)}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" class="dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.offer.label}</div>
+      <h2 class="reveal" style="margin-bottom:3rem">{c.offer.title}</h2>
+      <div class="cards">
+        {c.offer.cards.map((k) => (
+          <button class="card reveal" aria-expanded="false">
+            <div class="photo warm" data-label={k.photo}></div>
+            <div><span class="num">{k.n}</span><h3 style="margin-top:.6rem">{k.title}</h3><p class="price" style="margin-top:.6rem">{k.price}</p></div>
+            <div>
+              <ul>{k.meta.map((m, i) => <li><Icon name={metaIcons[i]} />{m}</li>)}</ul>
+              <span class="tap">{c.offer.tap}</span>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="training" class="light">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.training.label}</div>
+      <h2 class="reveal">{c.training.title}</h2>
+      <ol class="steps">{c.training.steps.map((s, i) => <li class="reveal"><Icon name={stepIcons[i]} /><h3>{s.t}</h3><p>{s.d}</p></li>)}</ol>
+    </div>
+  </section>
+
+  <section id="booking" class="dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.booking.label}</div>
+      <h2 class="reveal">{c.booking.title}</h2>
+      <ol class="steps">{c.booking.steps.map((s, i) => <li class="reveal"><Icon name={bookIcons[i]} /><h3>{s.t}</h3><p>{s.d}</p></li>)}</ol>
+      <p style="margin-top:3rem"><a class="btn" href={WHATSAPP} rel="noopener">{c.booking.cta}</a></p>
+    </div>
+  </section>
+
+  <section id="story" class="light">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.story.label}</div>
+      <h2 class="reveal" style="margin-bottom:3rem">{c.story.title}</h2>
+      {c.story.chapters.map((ch, i) => (
+        <div class="chap reveal">
+          <div class="photo warm" data-label={`Hoofdstuk ${i + 1}`}></div>
+          <div><small>0{i + 1}</small><h3 style="margin:.6rem 0 1rem">{ch.t}</h3><p>{ch.d}</p></div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="people" class="dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.people.label}</div>
+      <h2 class="reveal" style="margin-bottom:3rem">{c.people.title}</h2>
+      <div class="people">
+        {c.people.items.map((p) => (
+          <button class="person reveal" aria-expanded="false">
+            <div class="photo" data-label={`Portret ${p.name}`}></div>
+            <div class="bio">{p.bio}<br/><small>{c.people.hint}</small></div>
+            <h3>{p.name}</h3><small>{p.role}</small>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="map" class="dark map" style="padding-top:0">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{c.map.label}</div>
+      <h2 class="reveal" style="margin-bottom:2rem">{c.map.title}</h2>
+      <!-- Vereenvoudigde kaart; TODO: echte bestemmingen en nauwkeurigere omlijning -->
+      <svg class="mapsvg" viewBox="0 0 400 300" role="img" aria-label={c.map.title}>
+        <path class="land" d="M120 30 200 20l60 30 20 50-20 40 40 40-30 60-70 40-70-20-40-60-40-30 20-60 20-40z"/>
+        <path class="route" data-route d="M215 70 Q190 130 150 190"/>
+        <path class="route" data-route d="M215 70 Q250 140 270 210"/>
+        <path class="route" data-route d="M215 70 Q150 80 100 130"/>
+        <circle class="pt" cx="215" cy="70" r="4"/><text x="224" y="66">{c.map.home}</text>
+        <circle class="pt" cx="150" cy="190" r="3"/><circle class="pt" cx="270" cy="210" r="3"/><circle class="pt" cx="100" cy="130" r="3"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="gift" class="sand gift">
+    <div class="wrap split">
+      <div class="reveal"><div class="label"><Icon name="star" />{c.gift.label}</div><h2>{c.gift.title}</h2></div>
+      <div class="reveal"><p>{c.gift.text}</p><a class="btn" href="#contact">{c.gift.cta}</a></div>
+    </div>
+  </section>
+
+  <section id="contact" class="light">
+    <div class="wrap split">
+      <div class="photo" data-label="Contact — foto"></div>
+      <div>
+        <div class="label"><Icon name="star" />{c.contact.label}</div>
+        <h2 style="margin-bottom:2rem">{c.contact.title}</h2>
+        <!-- TODO: koppel aan een formulierdienst (bv. Formspree / Netlify Forms) -->
+        <form data-form action="#" method="post">
+          <label>{c.contact.form.name}<input name="name" required autocomplete="name" /></label>
+          <label>{c.contact.form.email}<input name="email" type="email" required autocomplete="email" /></label>
+          <label>{c.contact.form.topic}<select name="topic">{c.contact.form.topics.map((t) => <option>{t}</option>)}</select></label>
+          <label>{c.contact.form.message}<textarea name="message" required></textarea></label>
+          <div><button class="btn" type="submit">{c.contact.form.send}</button> <a href={WHATSAPP} style="margin-left:1rem">{c.contact.or}</a></div>
+          <p data-sent hidden>{c.contact.form.sent}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="dark">
+  <span>© {new Date().getFullYear()} {c.footer.rights}</span>
+  <a href={INSTAGRAM} rel="noopener">{c.footer.follow}</a>
+</footer>
+<a class="fab" href={WHATSAPP} rel="noopener">{c.nav.book}</a>
+
+<script>
+  import '../scripts/main';
+</script>
