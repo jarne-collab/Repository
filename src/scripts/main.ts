@@ -28,13 +28,13 @@ $<HTMLElement>('main section[id]').forEach((s) => {
 const introA = document.querySelector<HTMLElement>('[data-intro-a]');
 const introB = document.querySelector<HTMLElement>('[data-intro-b]');
 if (introA && introB && !reduce) {
-  const L = '#intro .panel.left', R = '#intro .panel.right', T = '#intro .intro-title', C = '#intro .scroll-cue';
+  const L = '#intro .panel.left', R = '#intro .panel.right', T = '#intro .intro-title', C = '#intro .scroll-cue', SH = '#intro .intro-shade';
   gsap.timeline({ defaults: { duration: 1.5, ease: 'power3.out' } })
     .from(L, { yPercent: -100 }, 0).from(R, { yPercent: 100 }, 0)
     .from(`${T} span`, { yPercent: 40, opacity: 0, duration: 1, stagger: .12 }, .7);
   gsap.timeline({ defaults: { ease: 'none', duration: 1 }, scrollTrigger: { trigger: '#intro-wrap', start: 'top top', end: 'bottom bottom', scrub: .5 } })
     .to(introA, { yPercent: 100 }, 0).to(introB, { yPercent: -100 }, 0)
-    .to(T, { opacity: 0, yPercent: -25, duration: .45 }, 0).to(C, { opacity: 0, duration: .2 }, 0);
+    .to(T, { opacity: 0, yPercent: -25, duration: .45 }, 0).to(C, { opacity: 0, duration: .2 }, 0).to(SH, { opacity: 0, duration: .4 }, 0);
 }
 
 // Reveal

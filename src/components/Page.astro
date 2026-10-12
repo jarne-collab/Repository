@@ -15,6 +15,7 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
 <section id="intro" class="dark" aria-label="Grounded Climbing">
   <div class="panel left"><div class="photo" data-intro-a><img src="/img/intro-canyon.jpg" alt="Canyoning in een smalle, bemoste kloof met waterval" width="1400" height="1867" fetchpriority="high" /></div></div>
   <div class="panel right"><div class="photo warm" data-intro-b><img src="/img/intro-climb.jpg" alt="Klimmer in een overhangende rotswand tegen een dramatische lucht" width="1400" height="1867" fetchpriority="high" /></div></div>
+  <div class="intro-shade"></div>
   <div class="intro-title"><span>Grounded</span><span>Climbing</span></div>
   <a class="scroll-cue" href="#hero" aria-label="Scroll"><span></span></a>
 </section>
@@ -22,8 +23,7 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
 
 <main>
   <section id="hero" class="dark">
-    <!-- TODO: vervang .inner door <img src="/img/hero.jpg" alt="…"> zodra de bannerfoto er is -->
-    <div class="photo hero-photo" data-label="Hero — supergrote bannerfoto"><div class="inner" data-parallax></div></div>
+    <div class="photo hero-photo"><div class="inner" data-parallax><img src="/img/hero.jpg" alt="Zon boven een besneeuwd landschap met sparren en lange schaduwen" width="2000" height="1500" fetchpriority="high" /></div></div>
     <div class="content wrap">
       <h1>{c.hero.word}</h1>
       <p>{c.hero.line}</p>
