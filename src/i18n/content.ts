@@ -1,5 +1,7 @@
 // Alle teksten NL + EN. Alles met "TODO" is een placeholder die Jarne nog invult.
 export type Lang = 'nl' | 'en';
+// Inschrijfformulier winterretreat (Pauline / De Wildernis Club)
+const FORM_WINTER = 'https://forms.gle/aEp6BE9HyNaGrPVs8';
 
 const nl = {
   meta: {
@@ -23,12 +25,13 @@ const nl = {
     intro: 'Klimretreats in een natuurlijke omgeving: boulders, yoga, vegetarische maaltijden en een groep die je steunt.',
     // Retreat 01 = winterretreat (brochure De Wildernis Club). TODO: retreat 02 en 03
     items: [
-      { title: 'Winterretreat', place: 'Maurienne, Frankrijk', date: '12–19 dec 2026', price: 'Vanaf € 999', note: 'Max. 9 deelnemers · yoga, sneeuwschoenwandelen, volpension', partner: 'In samenwerking met De Wildernis Club', partnerUrl: 'https://www.dewildernisclub.be', photo: 'Staande foto: winter in de Maurienne' },
-      { title: 'Retreat 02', place: 'Locatie volgt', date: 'Datum volgt', price: '€ —', note: '', partner: '', partnerUrl: '', photo: 'Staande foto: avondlicht' },
-      { title: 'Retreat 03', place: 'Locatie volgt', date: 'Datum volgt', price: '€ —', note: '', partner: '', partnerUrl: '', photo: 'Staande foto: ochtendmist' },
+      { title: 'Winterretreat', place: 'Maurienne, Frankrijk', date: '12–19 dec 2026', price: 'Vanaf € 999', note: 'Max. 9 deelnemers · yoga, sneeuwschoenwandelen, volpension', partner: 'In samenwerking met De Wildernis Club', partnerUrl: 'https://www.dewildernisclub.be', bookUrl: FORM_WINTER, photo: 'Staande foto: winter in de Maurienne' },
+      { title: 'Retreat 02', place: 'Locatie volgt', date: 'Datum volgt', price: '€ —', note: '', partner: '', partnerUrl: '', bookUrl: '', photo: 'Staande foto: avondlicht' },
+      { title: 'Retreat 03', place: 'Locatie volgt', date: 'Datum volgt', price: '€ —', note: '', partner: '', partnerUrl: '', bookUrl: '', photo: 'Staande foto: ochtendmist' },
     ],
     includes: ['Verblijf in een huis of tent in het bos', 'Yoga ’s ochtends en ’s avonds met Pauline', 'Begeleid klimmen met Jarne', 'Voedzame vegetarische maaltijden'],
     more: 'Meer info & beschikbaarheid',
+    book: 'Boek je plek',
   },
   about: {
     label: 'Over mij',
@@ -126,12 +129,13 @@ const en: typeof nl = {
     title: 'Slow down. Climb. Connect.',
     intro: 'Climbing retreats in natural settings: boulders, yoga, vegetarian meals and a group that supports you.',
     items: [
-      { title: 'Winter retreat', place: 'Maurienne, France', date: '12–19 Dec 2026', price: 'From € 999', note: 'Max. 9 participants · yoga, snowshoeing, full board', partner: 'In collaboration with De Wildernis Club', partnerUrl: 'https://www.dewildernisclub.be', photo: 'Portrait photo: winter in the Maurienne' },
-      { title: 'Retreat 02', place: 'Location soon', date: 'Date soon', price: '€ —', note: '', partner: '', partnerUrl: '', photo: 'Portrait photo: evening light' },
-      { title: 'Retreat 03', place: 'Location soon', date: 'Date soon', price: '€ —', note: '', partner: '', partnerUrl: '', photo: 'Portrait photo: morning mist' },
+      { title: 'Winter retreat', place: 'Maurienne, France', date: '12–19 Dec 2026', price: 'From € 999', note: 'Max. 9 participants · yoga, snowshoeing, full board', partner: 'In collaboration with De Wildernis Club', partnerUrl: 'https://www.dewildernisclub.be', bookUrl: FORM_WINTER, photo: 'Portrait photo: winter in the Maurienne' },
+      { title: 'Retreat 02', place: 'Location soon', date: 'Date soon', price: '€ —', note: '', partner: '', partnerUrl: '', bookUrl: '', photo: 'Portrait photo: evening light' },
+      { title: 'Retreat 03', place: 'Location soon', date: 'Date soon', price: '€ —', note: '', partner: '', partnerUrl: '', bookUrl: '', photo: 'Portrait photo: morning mist' },
     ],
     includes: ['A stay in a house or tent in the forest', 'Yoga every morning and evening with Pauline', 'Guided climbing with Jarne', 'Nourishing vegetarian meals'],
     more: 'More info & availability',
+    book: 'Book your spot',
   },
   about: {
     label: 'About me',
