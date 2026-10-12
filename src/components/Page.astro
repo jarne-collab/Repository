@@ -1,21 +1,15 @@
 ---
 import Icon from './Icon.astro';
-import { content, WHATSAPP, INSTAGRAM, type Lang } from '../i18n/content';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { content, WHATSAPP, type Lang } from '../i18n/content';
 const { lang } = Astro.props as { lang: Lang };
 const c = content[lang];
-const navItems = [['retreats', c.nav.retreats], ['about', c.nav.about], ['offer', c.nav.offer], ['training', c.nav.training], ['story', c.nav.story], ['contact', c.nav.contact]];
 const stepIcons = ['goal', 'hello', 'plan', 'climb'];
 const bookIcons = ['climb', 'bed', 'plus', 'coin'];
 const metaIcons = ['pin', 'cal', 'group', 'star'];
 ---
-<header class="site" id="top">
-  <a class="logo" href="#hero" aria-label="Grounded Climbing"><Icon name="logo" /> Grounded Climbing</a>
-  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
-  <nav class="main" id="nav">
-    {navItems.map(([id, t]) => <a href={`#${id}`} data-nav={id}>{t}</a>)}
-    <a class="lang" href={c.switch.href} hreflang={lang === 'nl' ? 'en' : 'nl'} lang={lang === 'nl' ? 'en' : 'nl'} aria-label={c.switch.label}>{c.switch.to}</a>
-  </nav>
-</header>
+<Header lang={lang} page="home" />
 
 <section id="intro" class="dark" aria-label="Grounded Climbing">
   <div class="panel left"><div class="photo" data-intro-a><img src="/img/intro-canyon.jpg" alt="Canyoning in een smalle, bemoste kloof met waterval" width="1400" height="1867" fetchpriority="high" /></div></div>
@@ -142,6 +136,7 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
           </button>
         ))}
       </div>
+      <p style="margin-top:3rem"><a class="btn" href={lang === 'nl' ? '/coaches/' : '/en/coaches/'}>{c.people.all}</a></p>
     </div>
   </section>
 
@@ -188,12 +183,4 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
   </section>
 </main>
 
-<footer class="dark">
-  <span>© {new Date().getFullYear()} {c.footer.rights}</span>
-  <a href={INSTAGRAM} rel="noopener">{c.footer.follow}</a>
-</footer>
-<a class="fab" href={WHATSAPP} rel="noopener">{c.nav.book}</a>
-
-<script>
-  import '../scripts/main';
-</script>
+<Footer lang={lang} />

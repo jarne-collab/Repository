@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { content, WHATSAPP, type Lang } from '../i18n/content';
+const { lang } = Astro.props as { lang: Lang };
+const c = content[lang];
+const t = c.team;
+const home = lang === 'nl' ? '/' : '/en/';
+---
+<Header lang={lang} page="team" />
+<main>
+  <section class="team-hero dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{t.label}</div>
+      <h1 class="reveal">{t.title}</h1>
+      <p class="reveal team-intro">{t.intro}</p>
+    </div>
+  </section>
+
+  {t.people.map((p, i) => (
+    <section class={`member ${i % 2 === 0 ? 'light' : 'dark'}`} id={p.name.toLowerCase()}>
+      <div class={`wrap split ${i % 2 === 1 ? 'flip' : ''}`}>
+        <div class="photo warm" data-label={p.photo}></div>
+        <div class="reveal">
+          <div class="label"><Icon name="star" />0{i + 1} — {p.role}</div>
+          <h2>{p.name}</h2>
+          <p class="lead">{p.bio}</p>
+          {p.facts.length > 0 && <ul class="facts">{p.facts.map((f) => <li>{f}</li>)}</ul>}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="partners dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{t.partners.label}</div>
+      <h2 class="reveal" style="margin-bottom:3rem">{t.partners.title}</h2>
+      <div class="cols3 partner-cols">
+        {t.partners.items.map((x) => (
+          <article class="col reveal">
+            <h3>{x.name}</h3>
+            <p style="margin:.8rem 0 1.4rem">{x.text}</p>
+            <a class="btn" href={x.url} rel="noopener" target="_blank">{x.cta}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sand gift">
+    <div class="wrap split">
+      <div class="reveal"><h2>{t.cta.title}</h2></div>
+      <div class="reveal"><p>{t.cta.text}</p><a class="btn" href={`${home}#contact`}>{t.cta.button}</a> <a href={WHATSAPP} rel="noopener" style="margin-left:1rem">{c.nav.book}</a></div>
+    </div>
+  </section>
+</main>
+<Footer lang={lang} />

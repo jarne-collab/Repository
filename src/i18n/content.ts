@@ -8,7 +8,7 @@ const nl = {
     title: 'Grounded Climbing — klimretreats & personal training',
     description: 'Klimretreats in de natuur en personal training in het klimmen, met Jarne. Joy over grades.',
   },
-  nav: { retreats: 'Retreats', about: 'Over mij', offer: 'Aanbod', training: 'Training', story: 'Verhaal', contact: 'Contact', book: 'Boek via WhatsApp' },
+  nav: { retreats: 'Retreats', about: 'Over mij', offer: 'Aanbod', training: 'Training', story: 'Verhaal', team: 'Team', contact: 'Contact', book: 'Boek via WhatsApp' },
   intro: { skip: 'Overslaan' },
   hero: { word: 'Grounded', line: 'Klimmen zonder te bewijzen. Joy over grades.', cta: 'Ontdek de retreats' },
   values: {
@@ -83,6 +83,7 @@ const nl = {
       { name: 'Caro', role: 'Partner', bio: 'Bio volgt.' },
     ],
     hint: 'Tik voor meer',
+    all: 'Ontmoet het team',
   },
   map: { label: 'Kaart', title: 'Vanuit Gent, overal waar de rots ons roept', home: 'Gent' },
   gift: { label: 'Cadeaubon', title: 'Geef een dag vertrouwen cadeau', text: 'Een cadeaubon voor een klimdag, sessie of retreat.', cta: 'Vraag een cadeaubon aan' },
@@ -93,7 +94,23 @@ const nl = {
     or: 'of via WhatsApp',
   },
   footer: { rights: 'Grounded Climbing', follow: 'Volg op Instagram' },
-  switch: { to: 'EN', href: '/en/', label: 'English' },
+  team: {
+    meta: { title: 'Team & partners — Grounded Climbing', description: 'Ontmoet Jarne, Pauline en Caro, en de partners achter Grounded Climbing.' },
+    label: 'Team', title: 'Wie je onderweg ontmoet',
+    intro: 'Een klein team met één overtuiging: klimmen en bewegen zijn er om je te verbinden, niet om te bewijzen.',
+    // TODO: bio's, rollen en foto's bevestigen; akkoord Pauline en Caro voor naam en foto
+    people: [
+      { name: 'Jarne', role: 'Klimcoach & outdoorbegeleider', bio: 'Leerkracht lichamelijke opvoeding en gepassioneerd outdoorbegeleider met jarenlange ervaring. Hij neemt je mee de bergen in op een veilige en enthousiaste manier. Jarne is een geboren motivator die mensen graag uitdaagt om met vertrouwen hun grenzen te verleggen.', facts: ['Leerkracht lichamelijke opvoeding', 'Outdoorbegeleider', 'Personal training klimmen'], photo: 'Portret Jarne' },
+      { name: 'Pauline', role: 'Yoga & ademwerk', bio: 'Gecertificeerd yogadocent, ademcoach en psycholoog van opleiding. Oprichtster van De Wildernis Club, waar ze via beweging, ademhaling en natuur werkt aan (veer)kracht. Pauline begeleidt je naar meer rust, flexibiliteit en groei.', facts: ['Gecertificeerd yogadocent', 'Ademcoach', 'Psycholoog van opleiding'], photo: 'Portret Pauline' },
+      { name: 'Caro', role: 'Partner', bio: 'Bio volgt.', facts: [], photo: 'Portret Caro' },
+    ],
+    partners: {
+      label: 'Partners', title: 'Samen onderweg',
+      items: [{ name: 'De Wildernis Club', text: 'Retreats en bewegen in de natuur, opgericht door Pauline. Samen organiseren we de winterretreat in de Maurienne.', url: 'https://www.dewildernisclub.be', cta: 'Naar De Wildernis Club' }],
+    },
+    cta: { title: 'Benieuwd of we bij elkaar passen?', text: 'Stuur een bericht of plan een kennismaking.', button: 'Neem contact op' },
+  },
+  switch: { to: 'EN', label: 'English' },
   story: {
     label: 'Mijn verhaal',
     title: 'Grounded is een weg, geen eindpunt',
@@ -113,7 +130,7 @@ const en: typeof nl = {
     title: 'Grounded Climbing — climbing retreats & personal training',
     description: 'Climbing retreats in nature and personal climbing coaching with Jarne. Joy over grades.',
   },
-  nav: { retreats: 'Retreats', about: 'About', offer: 'Offer', training: 'Training', story: 'Story', contact: 'Contact', book: 'Book on WhatsApp' },
+  nav: { retreats: 'Retreats', about: 'About', offer: 'Offer', training: 'Training', story: 'Story', team: 'Team', contact: 'Contact', book: 'Book on WhatsApp' },
   intro: { skip: 'Skip' },
   hero: { word: 'Grounded', line: 'Climbing with nothing to prove. Joy over grades.', cta: 'Discover the retreats' },
   values: {
@@ -184,6 +201,7 @@ const en: typeof nl = {
       { name: 'Caro', role: 'Partner', bio: 'Bio soon.' },
     ],
     hint: 'Tap for more',
+    all: 'Meet the team',
   },
   map: { label: 'Map', title: 'From Ghent, wherever the rock calls us', home: 'Ghent' },
   gift: { label: 'Gift card', title: 'Give a day of trust', text: 'A gift card for a climbing day, session or retreat.', cta: 'Request a gift card' },
@@ -194,7 +212,22 @@ const en: typeof nl = {
     or: 'or on WhatsApp',
   },
   footer: { rights: 'Grounded Climbing', follow: 'Follow on Instagram' },
-  switch: { to: 'NL', href: '/', label: 'Nederlands' },
+  team: {
+    meta: { title: 'Team & partners — Grounded Climbing', description: 'Meet Jarne, Pauline and Caro, and the partners behind Grounded Climbing.' },
+    label: 'Team', title: 'Who you’ll meet along the way',
+    intro: 'A small team with one belief: climbing and movement are there to connect you, not to prove yourself.',
+    people: [
+      { name: 'Jarne', role: 'Climbing coach & outdoor guide', bio: 'Physical education teacher and passionate outdoor guide with years of experience. He takes you into the mountains in a safe and enthusiastic way. Jarne is a born motivator who loves to challenge people to push their limits with confidence.', facts: ['Physical education teacher', 'Outdoor guide', 'Personal climbing coaching'], photo: 'Portrait Jarne' },
+      { name: 'Pauline', role: 'Yoga & breathwork', bio: 'Certified yoga teacher, breath coach and psychologist by training. Founder of De Wildernis Club, where she works on resilience through movement, breathing and nature. Pauline guides you towards more calm, flexibility and growth.', facts: ['Certified yoga teacher', 'Breath coach', 'Psychologist by training'], photo: 'Portrait Pauline' },
+      { name: 'Caro', role: 'Partner', bio: 'Bio soon.', facts: [], photo: 'Portrait Caro' },
+    ],
+    partners: {
+      label: 'Partners', title: 'On the way together',
+      items: [{ name: 'De Wildernis Club', text: 'Retreats and movement in nature, founded by Pauline. Together we run the winter retreat in the Maurienne.', url: 'https://www.dewildernisclub.be', cta: 'Visit De Wildernis Club' }],
+    },
+    cta: { title: 'Curious if we’re a fit?', text: 'Send a message or plan an intro call.', button: 'Get in touch' },
+  },
+  switch: { to: 'NL', label: 'Nederlands' },
   story: {
     label: 'My story',
     title: 'Grounded is a road, not a destination',

@@ -1,0 +1,14 @@
+---
+import { content, WHATSAPP, INSTAGRAM, type Lang } from '../i18n/content';
+const { lang } = Astro.props as { lang: Lang };
+const c = content[lang];
+---
+<footer class="dark">
+  <span>© {new Date().getFullYear()} {c.footer.rights}</span>
+  <a href={INSTAGRAM} rel="noopener">{c.footer.follow}</a>
+</footer>
+<a class="fab" href={WHATSAPP} rel="noopener">{c.nav.book}</a>
+
+<script>
+  import '../scripts/main';
+</script>

@@ -2,15 +2,17 @@
 import '@fontsource-variable/inter-tight';
 import '../styles/global.css';
 import { content, type Lang } from '../i18n/content';
-const { lang } = Astro.props as { lang: Lang };
+const { lang, page = 'home' } = Astro.props as { lang: Lang; page?: 'home' | 'team' };
 const c = content[lang];
-const path = lang === 'nl' ? '/' : '/en/';
+const suffix = page === 'team' ? 'coaches/' : '';
+const path = (lang === 'nl' ? '/' : '/en/') + suffix;
+const meta = page === 'team' ? c.team.meta : c.meta;
 const canonical = new URL(path, Astro.site).href;
-const altNl = new URL('/', Astro.site).href;
-const altEn = new URL('/en/', Astro.site).href;
+const altNl = new URL('/' + suffix, Astro.site).href;
+const altEn = new URL('/en/' + suffix, Astro.site).href;
 const ld = {
   '@context': 'https://schema.org', '@type': 'SportsActivityLocation', name: 'Grounded Climbing',
-  description: c.meta.description, url: canonical, areaServed: 'Europe', founder: { '@type': 'Person', name: 'Jarne' },
+  description: meta.description, url: canonical, areaServed: 'Europe', founder: { '@type': 'Person', name: 'Jarne' },
 };
 ---
 <!doctype html>
@@ -18,16 +20,16 @@ const ld = {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{c.meta.title}</title>
-  <meta name="description" content={c.meta.description} />
+  <title>{meta.title}</title>
+  <meta name="description" content={meta.description} />
   <meta name="theme-color" content="#142019" />
   <link rel="canonical" href={canonical} />
   <link rel="alternate" hreflang="nl" href={altNl} />
   <link rel="alternate" hreflang="en" href={altEn} />
   <link rel="alternate" hreflang="x-default" href={altNl} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <meta property="og:title" content={c.meta.title} />
-  <meta property="og:description" content={c.meta.description} />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:description" content={meta.description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <script is:inline>document.documentElement.className='js'</script>
