@@ -60,6 +60,10 @@ nav.main .lang { border: 1px solid currentColor; border-radius: 999px; padding: 
 
 /* Intro: twee foto's, links schuift naar beneden, rechts naar boven; blijft gewoon bovenaan de pagina staan */
 #intro { height: 100svh; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--nacht); }
+.js #intro-wrap { height: 200svh; }
+.js #intro { position: sticky; top: 0; z-index: 2; background: transparent; pointer-events: none; }
+.js #intro .scroll-cue { pointer-events: auto; }
+.js #hero { margin-top: -100svh; z-index: 1; }
 #intro .panel { position: relative; overflow: hidden; }
 #intro .photo { position: absolute; inset: -9% 0; border-radius: 0; will-change: transform; }
 #intro .photo::after { display: none; }
@@ -174,6 +178,7 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 
 /* Intro: foto-uitsnede en leesbaarheid van menu boven de foto's */
 #intro .photo img { object-position: 28% center; }
+#intro::before, #intro::after { transition: opacity .2s; }
 #intro::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 200px; z-index: 1; background: linear-gradient(180deg, rgba(20,32,25,.8), transparent); pointer-events: none; }
 #intro .panel.right .photo img { object-position: 42% center; }
 #intro::after { content: ''; position: absolute; inset: auto 0 0 0; height: 45%; z-index: 1; background: linear-gradient(0deg, rgba(20,32,25,.6), transparent); pointer-events: none; }
@@ -191,3 +196,14 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 .partner-cols { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .partner-cols .col { border-right: 0; padding-left: 0; }
 @media (max-width: 800px) { .member .split.flip .photo { order: 0; } }
+
+/* Hero: supergrote bannerfoto */
+#hero { min-height: 100svh; }
+#hero .photo.hero-photo { background: none; }
+#hero .photo.hero-photo .inner { position: absolute; inset: -14% 0; background: radial-gradient(120% 80% at 70% 20%, #E3D7C1 0%, #C8834A 38%, #5a3a24 70%, #142019 100%); }
+#hero .photo.hero-photo .inner img { width: 100%; height: 100%; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) {
+  .js #intro-wrap { height: auto; }
+  .js #intro { position: relative; background: var(--nacht); pointer-events: auto; }
+  .js #hero { margin-top: 0; }
+}

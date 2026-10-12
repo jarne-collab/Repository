@@ -23,18 +23,18 @@ $<HTMLElement>('main section[id]').forEach((s) => {
   } });
 });
 
-// Intro: links schuift naar beneden, rechts naar boven. Daarna gaan ze bij scrollen verder in tegengestelde
-// richting (en terug bij omhoog scrollen), zodat je altijd op de twee foto's terugkomt.
+// Intro: de twee foto's schuiven bij scrollen in tegengestelde richting weg (links naar beneden, rechts naar
+// boven) en leggen de homepage vrij. Omhoog scrollen brengt ze terug (scrub).
 const introA = document.querySelector<HTMLElement>('[data-intro-a]');
 const introB = document.querySelector<HTMLElement>('[data-intro-b]');
 if (introA && introB && !reduce) {
-  const tl = gsap.timeline({ defaults: { duration: 1.5, ease: 'power3.out' } });
-  tl.from(introA, { yPercent: -100 }, 0).from(introB, { yPercent: 100 }, 0)
-    .from('#intro .intro-title span', { yPercent: 40, opacity: 0, duration: 1, stagger: .12 }, .7);
-  tl.eventCallback('onComplete', () => {
-    gsap.to(introA, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: '#intro', start: 'top top', end: 'bottom top', scrub: true } });
-    gsap.to(introB, { yPercent: -7, ease: 'none', scrollTrigger: { trigger: '#intro', start: 'top top', end: 'bottom top', scrub: true } });
-  });
+  const L = '#intro .panel.left', R = '#intro .panel.right', T = '#intro .intro-title', C = '#intro .scroll-cue';
+  gsap.timeline({ defaults: { duration: 1.5, ease: 'power3.out' } })
+    .from(L, { yPercent: -100 }, 0).from(R, { yPercent: 100 }, 0)
+    .from(`${T} span`, { yPercent: 40, opacity: 0, duration: 1, stagger: .12 }, .7);
+  gsap.timeline({ defaults: { ease: 'none', duration: 1 }, scrollTrigger: { trigger: '#intro-wrap', start: 'top top', end: 'bottom bottom', scrub: .5 } })
+    .to(introA, { yPercent: 100 }, 0).to(introB, { yPercent: -100 }, 0)
+    .to(T, { opacity: 0, yPercent: -25, duration: .45 }, 0).to(C, { opacity: 0, duration: .2 }, 0);
 }
 
 // Reveal
