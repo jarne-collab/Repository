@@ -51,7 +51,7 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
       <div class="cols3">
         {c.retreats.items.map((r) => (
           <article class="col reveal">
-            <div class="photo" data-label={r.photo}></div>
+            <div class="photo" data-label={r.photo}>{r.image && <img src={r.image} alt={r.alt} width="900" height="1200" loading="lazy" />}</div>
             <div class="meta"><span>{r.date}</span><span class="price">{r.price}</span></div>
             <h3>{r.title}</h3><small>{r.place}</small>
             {r.note && <p style="margin:.8rem 0 0;font-size:.92rem;opacity:.85">{r.note}</p>}
