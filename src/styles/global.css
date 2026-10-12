@@ -211,3 +211,6 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 /* Hero op gsm: uitsnede zo dat de zon in beeld komt */
 @media (max-width: 800px) { #hero .photo.hero-photo .inner img { object-position: 23% center; } }
 .photo:has(> img)::after { display: none; }
+
+.facts-label { margin: 2.2rem 0 .6rem; font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
+.facts-label + .facts { margin-top: 0; }

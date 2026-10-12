@@ -26,7 +26,8 @@ const home = lang === 'nl' ? '/' : '/en/';
           <div class="label"><Icon name="star" />0{i + 1} — {p.role}</div>
           <h2>{p.name}</h2>
           <p class="lead">{p.bio}</p>
-          {p.facts.length > 0 && <ul class="facts">{p.facts.map((f) => <li>{f}</li>)}</ul>}
+          {p.facts.length > 0 && <><p class="facts-label">{t.labels.facts}</p><ul class="facts">{p.facts.map((f) => <li>{f}</li>)}</ul></>}
+          {p.training.length > 0 && <><p class="facts-label">{t.labels.training}</p><ul class="facts">{p.training.map((f) => <li>{f}</li>)}</ul></>}
         </div>
       </div>
     </section>
