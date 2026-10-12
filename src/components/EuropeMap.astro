@@ -1,0 +1,43 @@
+---
+// Kaart van West-Europa, gegenereerd bij het bouwen uit Natural Earth (world-atlas); geen runtime-kosten.
+import { readFileSync } from 'node:fs';
+import { geoConicConformal, geoPath } from 'd3-geo';
+import { feature } from 'topojson-client';
+import type { Lang } from '../i18n/content';
+const { lang, label, home, retreat } = Astro.props as { lang: Lang; label: string; home: string; retreat: string };
+
+const W = 800, H = 640;
+const topo = JSON.parse(readFileSync('node_modules/world-atlas/countries-50m.json', 'utf8'));
+const countries = feature(topo, topo.objects.countries) as any;
+// Gent en Saint-Jean-de-Maurienne: [lengte, breedte]
+const GENT: [number, number] = [3.7174, 51.0543];
+const SJM: [number, number] = [6.3466, 45.2766];
+const projection = geoConicConformal().parallels([40, 56]).rotate([-8, 0]).center([0, 48]).scale(1180).translate([W / 2, H / 2]).clipExtent([[0, 0], [W, H]]);
+const path = geoPath(projection).digits(1);
+// alleen landen die (deels) in beeld liggen, en geen datalijn-artefacten
+const visible = countries.features.filter((f: any) => { const b = geoPath(projection).bounds(f); return b[1][0] > 0 && b[0][0] < W && b[1][1] > 0 && b[0][1] < H; });
+const d = visible.map((f: any) => path(f)).filter(Boolean).join('');
+const g = projection(GENT)!, s = projection(SJM)!;
+// licht gebogen route (kwadratische curve); controlepunt ligt iets opzij van de rechte lijn
+const mx = (g[0] + s[0]) / 2, my = (g[1] + s[1]) / 2;
+const route = `M${g[0].toFixed(1)} ${g[1].toFixed(1)} Q${(mx - 38).toFixed(1)} ${(my - 6).toFixed(1)} ${s[0].toFixed(1)} ${s[1].toFixed(1)}`;
+---
+<svg class="mapsvg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label}>
+  <defs>
+    <radialGradient id="glow"><stop offset="0" stop-color="#C8834A" stop-opacity=".9" /><stop offset="1" stop-color="#C8834A" stop-opacity="0" /></radialGradient>
+    <clipPath id="mapclip"><rect width={W} height={H} rx="6" /></clipPath>
+  </defs>
+  <g clip-path="url(#mapclip)">
+    <rect width={W} height={H} class="sea" />
+    <path class="land" d={d} />
+    <path class="route" data-route d={route} />
+    <g>
+      <circle class="halo" cx={s[0]} cy={s[1]} r="26" fill="url(#glow)" />
+      <circle class="pulse" cx={s[0]} cy={s[1]} r="7" />
+      <circle class="pt" cx={s[0]} cy={s[1]} r="5" />
+    </g>
+    <circle class="pt home" cx={g[0]} cy={g[1]} r="4" />
+    <text class="lbl" x={g[0] + 10} y={g[1] - 8}>{home}</text>
+    <text class="lbl strong" x={s[0] + 14} y={s[1] + 4}>{retreat}</text>
+  </g>
+</svg>

@@ -97,7 +97,7 @@ const nl = {
     hint: 'Tik voor meer',
     all: 'Ontmoet het team',
   },
-  map: { label: 'Kaart', title: 'Vanuit Gent, overal waar de rots ons roept', home: 'Gent' },
+  map: { label: 'Kaart', title: 'Vanuit Gent naar de bergen', home: 'Gent', retreat: 'Saint-Jean-de-Maurienne', cta: 'Bekijk de retreat' },
   gift: { label: 'Cadeaubon', title: 'Geef een dag vertrouwen cadeau', text: 'Een cadeaubon voor een klimdag, sessie of retreat.', cta: 'Vraag een cadeaubon aan' },
   contact: {
     label: 'Contact',
@@ -210,7 +210,7 @@ const en: typeof nl = {
     hint: 'Tap for more',
     all: 'Meet the team',
   },
-  map: { label: 'Map', title: 'From Ghent, wherever the rock calls us', home: 'Ghent' },
+  map: { label: 'Map', title: 'From Ghent to the mountains', home: 'Ghent', retreat: 'Saint-Jean-de-Maurienne', cta: 'See the retreat' },
   gift: { label: 'Gift card', title: 'Give a day of trust', text: 'A gift card for a climbing day, session or retreat.', cta: 'Request a gift card' },
   contact: {
     label: 'Contact',
