@@ -67,7 +67,7 @@ const nl: Story = {
         'Daarnaast blijft het gewoon heerlijk om als een aap aan een muur te hangen en te kunnen zeggen: dit is mijn sport!',
         'En dan heb ik het nog niet eens over de mensen die je onderweg ontmoet. De klimcommunity, de gedeelde pogingen, het elkaar aanmoedigen en de momenten waarop je samen iets beleeft dat je niet snel vergeet. Daar zit voor mij een groot deel van de magie.',
       ],
-      photo: { label: 'Foto: klimmen' },
+      photo: { label: 'Klimmen als ankerpunt', src: '/img/story-ankerpunt.jpg', alt: 'Een klimmer hoog op een overhangende rode zandsteenwand, met groene bomen en blauwe lucht', portrait: true },
     },
   ],
   why: {
@@ -138,7 +138,7 @@ const en: Story = {
         'Besides, it simply remains wonderful to hang on a wall like a monkey and say: this is my sport!',
         'And I haven’t even mentioned the people you meet along the way. The climbing community, the shared attempts, the encouragement and the moments when you experience something together that you won’t quickly forget. For me, a big part of the magic lies there.',
       ],
-      photo: { label: 'Photo: climbing' },
+      photo: { label: 'Climbing as an anchor', src: '/img/story-ankerpunt.jpg', alt: 'A climber high on an overhanging red sandstone wall, with green trees and blue sky', portrait: true },
     },
   ],
   why: {
