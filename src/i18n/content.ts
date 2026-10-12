@@ -40,7 +40,7 @@ const nl = {
     title: 'Met passie voor avontuur en oog voor de persoon begeleid ik je om te groeien, vertrouwen op te bouwen en je eigen grenzen te verkennen.',
     // Korte versie uit Jarnes eigen verhaal (content/verhaal-jarne.md); kan nog aangepast worden
     text: 'Hey, ik ben Jarne. Ik word gelukkig van bewegen, buiten zijn en samen met anderen op avontuur gaan. Sinds 2014 begeleid ik mensen in de bergen, vooral bij canyoning, maar ook bij klimmen en via ferrata. Klimmen is mijn ankerpunt: de ruis in mijn hoofd wordt zachter. Grounded is voor mij geen eindpunt, maar een weg.',
-    stats: [{ v: `${YEARS}`, l: 'jaar begeleiding in de bergen' }, { v: '5', l: 'diploma’s en brevetten' }],
+    stats: [{ v: `${YEARS}`, l: 'jaar begeleiding in de bergen' }, { v: '7', l: 'diploma’s en certificaten' }],
     photo: 'Portret Jarne',
     image: '/img/about-jarne.jpg',
     alt: 'Jarne lacht in een gele jas met rugzak en wandelstokken in de bergen',
@@ -104,7 +104,7 @@ const nl = {
     intro: 'Een klein team met één overtuiging: klimmen en bewegen zijn er om je te verbinden, niet om te bewijzen.',
     // TODO: bio's, rollen en foto's bevestigen; akkoord Pauline en Caro voor naam en foto
     people: [
-      { name: 'Jarne', role: 'Canyoning guide & klimcoach', bio: 'Leerkracht lichamelijke opvoeding en gepassioneerd outdoorbegeleider. Sinds 2014 neemt Jarne mensen mee de bergen in, vooral voor canyoning, maar ook voor klimmen en via ferrata, en af en toe voor een bergwandeling. Op een veilige en enthousiaste manier. Hij is een geboren motivator die mensen graag uitdaagt om met vertrouwen hun grenzen te verleggen.', facts: ['Diploma Lichamelijke Opvoeding en Bewegingsrecreatie', 'Canyoning Guide (2015)', 'Initiator Canyoning (2017)', 'Initiator Sportklimmen (sinds 2017)', 'Klimvaardigheidsbewijs 3, outdoor voorklimmen (2018)'], photo: 'Portret Jarne', image: '/img/about-jarne.jpg', alt: 'Jarne lacht in een gele jas met rugzak en wandelstokken in de bergen' },
+      { name: 'Jarne', role: 'Canyoning guide & klimcoach', bio: 'Leerkracht lichamelijke opvoeding en gepassioneerd outdoorbegeleider. Sinds 2014 neemt Jarne mensen mee de bergen in, vooral voor canyoning, maar ook voor klimmen en via ferrata, en af en toe voor een bergwandeling. Op een veilige en enthousiaste manier. Hij is een geboren motivator die mensen graag uitdaagt om met vertrouwen hun grenzen te verleggen.', facts: ['Diploma Lichamelijke Opvoeding en Bewegingsrecreatie', 'Canyoning Guide (2015)', 'Initiator Canyoning (2017)', 'Initiator Sportklimmen (sinds 2017)', 'Klimvaardigheidsbewijs 3, outdoor voorklimmen (2018)', 'Safeguarding Athletes from Harassment and Abuse (certificaat)', 'Coaching Youth Climbers, Coach Education Class (certificaat van deelname, 2024)'], photo: 'Portret Jarne', image: '/img/about-jarne.jpg', alt: 'Jarne lacht in een gele jas met rugzak en wandelstokken in de bergen' },
       { name: 'Pauline', role: 'Yoga & ademwerk', bio: 'Gecertificeerd yogadocent, ademcoach en psycholoog van opleiding. Oprichtster van De Wildernis Club, waar ze via beweging, ademhaling en natuur werkt aan (veer)kracht. Pauline begeleidt je naar meer rust, flexibiliteit en groei.', facts: ['Gecertificeerd yogadocent', 'Ademcoach', 'Psycholoog van opleiding'], photo: 'Portret Pauline', image: '', alt: '' },
       { name: 'Caro', role: 'Partner', bio: 'Bio volgt.', facts: [], photo: 'Portret Caro', image: '', alt: '' },
     ],
@@ -162,7 +162,7 @@ const en: typeof nl = {
     label: 'About me',
     title: 'With a passion for adventure and an eye for the person, I guide you to grow, build trust and explore your own limits.',
     text: 'Hey, I’m Jarne. Moving, being outdoors and heading out on adventures with others makes me happy. Since 2014 I have guided people in the mountains, mostly canyoning, but also climbing and via ferrata. Climbing is my anchor: the noise in my head gets quieter. For me, grounded is not a destination, but a road.',
-    stats: [{ v: `${YEARS}`, l: 'years guiding in the mountains' }, { v: '5', l: 'diplomas and certificates' }],
+    stats: [{ v: `${YEARS}`, l: 'years guiding in the mountains' }, { v: '7', l: 'diplomas and certificates' }],
     photo: 'Portrait Jarne',
     image: '/img/about-jarne.jpg',
     alt: 'Jarne laughing in a yellow jacket with backpack and trekking poles in the mountains',
@@ -223,7 +223,7 @@ const en: typeof nl = {
     label: 'Team', title: 'Who you’ll meet along the way',
     intro: 'A small team with one belief: climbing and movement are there to connect you, not to prove yourself.',
     people: [
-      { name: 'Jarne', role: 'Canyoning guide & climbing coach', bio: 'Physical education teacher and passionate outdoor guide. Since 2014 Jarne has taken people into the mountains, mostly for canyoning, but also for climbing and via ferrata, and occasionally for a mountain hike. In a safe and enthusiastic way. He is a born motivator who loves to challenge people to push their limits with confidence.', facts: ['Degree in Physical Education and Movement Recreation', 'Canyoning Guide (2015)', 'Canyoning Instructor (2017)', 'Sport Climbing Instructor (since 2017)', 'Climbing Skills Certificate 3, outdoor lead climbing (2018)'], photo: 'Portrait Jarne', image: '/img/about-jarne.jpg', alt: 'Jarne laughing in a yellow jacket with backpack and trekking poles in the mountains' },
+      { name: 'Jarne', role: 'Canyoning guide & climbing coach', bio: 'Physical education teacher and passionate outdoor guide. Since 2014 Jarne has taken people into the mountains, mostly for canyoning, but also for climbing and via ferrata, and occasionally for a mountain hike. In a safe and enthusiastic way. He is a born motivator who loves to challenge people to push their limits with confidence.', facts: ['Degree in Physical Education and Movement Recreation', 'Canyoning Guide (2015)', 'Canyoning Instructor (2017)', 'Sport Climbing Instructor (since 2017)', 'Climbing Skills Certificate 3, outdoor lead climbing (2018)', 'Safeguarding Athletes from Harassment and Abuse (certificate)', 'Coaching Youth Climbers, Coach Education Class (certificate of participation, 2024)'], photo: 'Portrait Jarne', image: '/img/about-jarne.jpg', alt: 'Jarne laughing in a yellow jacket with backpack and trekking poles in the mountains' },
       { name: 'Pauline', role: 'Yoga & breathwork', bio: 'Certified yoga teacher, breath coach and psychologist by training. Founder of De Wildernis Club, where she works on resilience through movement, breathing and nature. Pauline guides you towards more calm, flexibility and growth.', facts: ['Certified yoga teacher', 'Breath coach', 'Psychologist by training'], photo: 'Portrait Pauline', image: '', alt: '' },
       { name: 'Caro', role: 'Partner', bio: 'Bio soon.', facts: [], photo: 'Portrait Caro', image: '', alt: '' },
     ],
