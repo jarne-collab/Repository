@@ -242,6 +242,5 @@ const en: typeof nl = {
 };
 
 export const content = { nl, en };
-// TODO: echt WhatsApp-nummer invullen
-export const WHATSAPP = 'https://wa.me/32000000000';
+export const WHATSAPP = 'https://wa.me/32468324833';
 export const INSTAGRAM = 'https://www.instagram.com/grounded.climbing/';
