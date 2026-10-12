@@ -52,6 +52,8 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
             <div class="photo" data-label={r.photo}></div>
             <div class="meta"><span>{r.date}</span><span class="price">{r.price}</span></div>
             <h3>{r.title}</h3><small>{r.place}</small>
+            {r.note && <p style="margin:.8rem 0 0;font-size:.92rem;opacity:.85">{r.note}</p>}
+            {r.partner && <p style="margin:.4rem 0 0;font-size:.8rem;opacity:.7"><a href={r.partnerUrl} rel="noopener">{r.partner}</a></p>}
           </article>
         ))}
       </div>
