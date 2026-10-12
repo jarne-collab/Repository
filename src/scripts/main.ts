@@ -23,18 +23,18 @@ $<HTMLElement>('main section[id]').forEach((s) => {
   } });
 });
 
-// Intro: twee beelden die samenvallen, max ~1,7s, scrollbaar
-const intro = document.getElementById('intro')!;
-const endIntro = () => intro.remove();
-if (reduce) endIntro();
-else {
-  const a = intro.querySelector('.a')!, b = intro.querySelector('.b')!;
-  gsap.set(a, { yPercent: -100 }); gsap.set(b, { yPercent: 100 });
-  const tl = gsap.timeline({ onComplete: endIntro });
-  tl.to(a, { yPercent: 0, duration: .8, ease: 'power3.out' }, 0)
-    .to(b, { yPercent: 0, duration: .8, ease: 'power3.out' }, 0)
-    .to(intro, { opacity: 0, duration: .6, ease: 'power2.inOut' }, 1.1);
-  intro.querySelector('.skip')!.addEventListener('click', () => { tl.kill(); endIntro(); });
+// Intro: links schuift naar beneden, rechts naar boven. Daarna gaan ze bij scrollen verder in tegengestelde
+// richting (en terug bij omhoog scrollen), zodat je altijd op de twee foto's terugkomt.
+const introA = document.querySelector<HTMLElement>('[data-intro-a]');
+const introB = document.querySelector<HTMLElement>('[data-intro-b]');
+if (introA && introB && !reduce) {
+  const tl = gsap.timeline({ defaults: { duration: 1.5, ease: 'power3.out' } });
+  tl.from(introA, { yPercent: -100 }, 0).from(introB, { yPercent: 100 }, 0)
+    .from('#intro .intro-title span', { yPercent: 40, opacity: 0, duration: 1, stagger: .12 }, .7);
+  tl.eventCallback('onComplete', () => {
+    gsap.to(introA, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: '#intro', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to(introB, { yPercent: -7, ease: 'none', scrollTrigger: { trigger: '#intro', start: 'top top', end: 'bottom top', scrub: true } });
+  });
 }
 
 // Reveal
