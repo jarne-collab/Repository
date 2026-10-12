@@ -21,7 +21,7 @@ const home = lang === 'nl' ? '/' : '/en/';
   {t.people.map((p, i) => (
     <section class={`member ${i % 2 === 0 ? 'light' : 'dark'}`} id={p.name.toLowerCase()}>
       <div class={`wrap split ${i % 2 === 1 ? 'flip' : ''}`}>
-        <div class="photo warm" data-label={p.photo}></div>
+        <div class="photo warm" data-label={p.photo}>{p.image && <img src={p.image} alt={p.alt} width="940" height="1175" loading="lazy" />}</div>
         <div class="reveal">
           <div class="label"><Icon name="star" />0{i + 1} — {p.role}</div>
           <h2>{p.name}</h2>
