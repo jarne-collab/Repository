@@ -2,7 +2,8 @@
 import Icon from './Icon.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
-import { content, WHATSAPP, type Lang } from '../i18n/content';
+import { content, paths, WHATSAPP, type Lang } from '../i18n/content';
+import { story } from '../i18n/story';
 const { lang } = Astro.props as { lang: Lang };
 const c = content[lang];
 const stepIcons = ['goal', 'hello', 'plan', 'climb'];
@@ -114,15 +115,14 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
   </section>
 
   <section id="story" class="light">
-    <div class="wrap">
-      <div class="label"><Icon name="star" />{c.story.label}</div>
-      <h2 class="reveal" style="margin-bottom:3rem">{c.story.title}</h2>
-      {c.story.chapters.map((ch, i) => (
-        <div class="chap reveal">
-          <div class="photo warm" data-label={`Hoofdstuk ${i + 1}`}></div>
-          <div><small>0{i + 1}</small><h3 style="margin:.6rem 0 1rem">{ch.t}</h3><p>{ch.d}</p></div>
-        </div>
-      ))}
+    <div class="wrap split">
+      <div class="photo warm" data-label={story[lang].chapters[2].photo.label}><img src={story[lang].chapters[2].photo.src} alt={story[lang].teaser.alt} width="1800" height="1350" loading="lazy" /></div>
+      <div class="reveal">
+        <div class="label"><Icon name="star" />{c.story.label}</div>
+        <h2 style="font-size:clamp(2rem,4.5vw,3.6rem);margin-bottom:1.6rem">{c.story.title}</h2>
+        <p class="lead">{story[lang].teaser.text}</p>
+        <p style="margin-top:2rem"><a class="btn" href={paths.story[lang]}>{story[lang].teaser.button}</a></p>
+      </div>
     </div>
   </section>
 
@@ -139,7 +139,7 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
           </button>
         ))}
       </div>
-      <p style="margin-top:3rem"><a class="btn" href={lang === 'nl' ? '/coaches/' : '/en/coaches/'}>{c.people.all}</a></p>
+      <p style="margin-top:3rem"><a class="btn" href={paths.team[lang]}>{c.people.all}</a></p>
     </div>
   </section>
 

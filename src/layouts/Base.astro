@@ -1,15 +1,15 @@
 ---
 import '@fontsource-variable/inter-tight';
 import '../styles/global.css';
-import { content, type Lang } from '../i18n/content';
-const { lang, page = 'home' } = Astro.props as { lang: Lang; page?: 'home' | 'team' };
+import { content, paths, type Lang, type PageId } from '../i18n/content';
+import { story } from '../i18n/story';
+const { lang, page = 'home' } = Astro.props as { lang: Lang; page?: PageId };
 const c = content[lang];
-const suffix = page === 'team' ? 'coaches/' : '';
-const path = (lang === 'nl' ? '/' : '/en/') + suffix;
-const meta = page === 'team' ? c.team.meta : c.meta;
+const path = paths[page][lang];
+const meta = page === 'team' ? c.team.meta : page === 'story' ? story[lang].meta : c.meta;
 const canonical = new URL(path, Astro.site).href;
-const altNl = new URL('/' + suffix, Astro.site).href;
-const altEn = new URL('/en/' + suffix, Astro.site).href;
+const altNl = new URL(paths[page].nl, Astro.site).href;
+const altEn = new URL(paths[page].en, Astro.site).href;
 const ld = {
   '@context': 'https://schema.org', '@type': 'SportsActivityLocation', name: 'Grounded Climbing',
   description: meta.description, url: canonical, areaServed: 'Europe', founder: { '@type': 'Person', name: 'Jarne' },

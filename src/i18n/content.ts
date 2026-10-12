@@ -1,5 +1,13 @@
 // Alle teksten NL + EN. Alles met "TODO" is een placeholder die Jarne nog invult.
 export type Lang = 'nl' | 'en';
+
+// Paden per pagina en taal
+export type PageId = 'home' | 'team' | 'story';
+export const paths: Record<PageId, Record<Lang, string>> = {
+  home: { nl: '/', en: '/en/' },
+  team: { nl: '/coaches/', en: '/en/coaches/' },
+  story: { nl: '/verhaal/', en: '/en/story/' },
+};
 // Jarne begeleidt in de bergen sinds 2014; het aantal jaren wordt bij elke build bijgewerkt
 const YEARS = new Date().getFullYear() - 2014;
 // Inschrijfformulier winterretreat (Pauline / De Wildernis Club)
@@ -119,14 +127,6 @@ const nl = {
   story: {
     label: 'Mijn verhaal',
     title: 'Grounded is een weg, geen eindpunt',
-    // TODO: Jarne bepaalt hoeveel persoonlijks erin komt; zachte versie als startpunt
-    chapters: [
-      { t: 'Klimmen als houvast', d: 'Na het einde van een lange relatie werd klimmen mijn houvast.' },
-      { t: 'Opnieuw opbouwen', d: 'Een hernia nam het klimmen even weg. Rustig en bewust terugkomen: grounded klimmen.' },
-      { t: 'Delen', d: 'Werken in de klimzaal en een jeugdteam opstarten.' },
-      { t: 'Op mijn eigen manier', d: 'Een zware periode en de wens om het anders en zelf te doen.' },
-      { t: 'Nog altijd onderweg', d: '“Dat is niet echt grounded.” Pijnlijk, maar waar. Ik leer elke dag bij.' },
-    ],
   },
 };
 
@@ -239,13 +239,6 @@ const en: typeof nl = {
   story: {
     label: 'My story',
     title: 'Grounded is a road, not a destination',
-    chapters: [
-      { t: 'Climbing as an anchor', d: 'After a long relationship ended, climbing became my anchor.' },
-      { t: 'Rebuilding', d: 'A herniated disc took climbing away for a while. Coming back slowly and consciously: grounded climbing.' },
-      { t: 'Sharing', d: 'Working at the climbing gym and starting a youth team.' },
-      { t: 'My own way', d: 'A heavy period and the wish to do things differently, on my own.' },
-      { t: 'Still on the way', d: '“That’s not really grounded.” Painful, but true. I keep learning.' },
-    ],
   },
 };
 

@@ -214,3 +214,24 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 
 .facts-label { margin: 2.2rem 0 .6rem; font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
 .facts-label + .facts { margin-top: 0; }
+
+/* Verhaalpagina */
+.story-hero { padding-top: clamp(140px, 20vw, 240px); }
+.story-hero h1 { font-size: clamp(2.8rem, 9vw, 8rem); max-width: 14ch; }
+.story-intro { max-width: 36ch; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.35; margin-top: 2.5rem; }
+.chapter .split { align-items: start; }
+.chapter .photo { aspect-ratio: 4/3; position: sticky; top: 100px; }
+.chapter .split.flip .photo { order: 2; }
+.chapter h2 { font-size: clamp(2rem, 4.4vw, 3.6rem); margin-bottom: 1.8rem; }
+.chapter p { max-width: 58ch; }
+.chapter p em, .why p em { font-style: italic; }
+.why .wrap { max-width: 1100px; }
+.why-title { font-size: clamp(2.4rem, 6vw, 5rem); margin-bottom: 2.5rem; }
+.why-text { max-width: 62ch; }
+.why-values-intro { margin-top: 2.5rem; font-weight: 500; }
+.why-values { margin-top: 2rem; border-top-color: rgba(46,74,48,.3); }
+.why-values .col { border-right-color: rgba(46,74,48,.3); }
+.closing { text-align: center; padding-top: clamp(100px, 16vw, 200px); padding-bottom: clamp(100px, 16vw, 200px); }
+.closing-name { font-size: clamp(2.6rem, 9vw, 7.5rem); }
+.closing-tag { font-size: clamp(1.4rem, 3vw, 2.4rem); font-style: italic; margin-top: 1.2rem; }
+@media (max-width: 800px) { .chapter .photo { position: relative; top: auto; } .chapter .split.flip .photo { order: 0; } .chapter .photo + .chapter-text { margin-top: 1rem; } }

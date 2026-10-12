@@ -1,0 +1,64 @@
+---
+import Icon from './Icon.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { content, paths, WHATSAPP, type Lang } from '../i18n/content';
+import { story } from '../i18n/story';
+const { lang } = Astro.props as { lang: Lang };
+const c = content[lang];
+const s = story[lang];
+const home = paths.home[lang];
+// *tekst* -> cursief
+const md = (t: string) => t.replace(/\*(.+?)\*/g, '<em>$1</em>');
+---
+<Header lang={lang} page="story" />
+<main>
+  <section class="story-hero dark">
+    <div class="wrap">
+      <div class="label"><Icon name="star" />{s.label}</div>
+      <h1 class="reveal">{s.title}</h1>
+      <p class="reveal story-intro">{s.intro}</p>
+    </div>
+  </section>
+
+  {s.chapters.map((ch, i) => (
+    <section class={`chapter ${i % 2 === 0 ? 'light' : 'dark'}`} id={ch.id}>
+      <div class={`wrap split ${i % 2 === 1 ? 'flip' : ''}`}>
+        <div class="photo warm" data-label={ch.photo?.label}>{ch.photo?.src && <img src={ch.photo.src} alt={ch.photo.alt} width="1800" height="1350" loading="lazy" />}</div>
+        <div class="chapter-text">
+          <div class="label reveal"><Icon name="star" />0{i + 1} — {ch.label}</div>
+          <h2 class="reveal">{ch.title}</h2>
+          {ch.paras.map((t) => <p class="reveal" set:html={md(t)} />)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="why light" id={s.why.id}>
+    <div class="wrap">
+      <div class="label"><Icon name="star" />0{s.chapters.length + 1} — {s.why.label}</div>
+      <h2 class="reveal why-title">{s.why.title}</h2>
+      <div class="why-text">
+        {s.why.paras.map((t) => <p class="reveal">{t}</p>)}
+        <p class="reveal why-values-intro">{s.why.valuesIntro}</p>
+      </div>
+      <div class="cols3 why-values">
+        {s.why.values.map((v) => (
+          <article class="col reveal"><h3>{v.word}</h3><p style="margin-top:.8rem">{v.text}</p></article>
+        ))}
+      </div>
+      <div class="why-text" style="margin-top:3rem">
+        {s.why.after.map((t) => <p class="reveal">{t}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="closing sand">
+    <div class="wrap">
+      <h2 class="reveal closing-name">{s.closing.name}</h2>
+      <p class="reveal closing-tag">{s.closing.tagline}</p>
+      <p class="reveal" style="margin-top:2.5rem"><a class="btn" href={`${home}#retreats`}>{s.closing.retreats}</a> <a href={`${home}#contact`} style="margin-left:1.2rem">{s.closing.contact}</a></p>
+    </div>
+  </section>
+</main>
+<Footer lang={lang} />

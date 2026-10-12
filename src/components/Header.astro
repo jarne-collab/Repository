@@ -1,18 +1,20 @@
 ---
 import Icon from './Icon.astro';
-import { content, type Lang } from '../i18n/content';
-const { lang, page } = Astro.props as { lang: Lang; page: 'home' | 'team' };
+import { content, paths, type Lang, type PageId } from '../i18n/content';
+const { lang, page } = Astro.props as { lang: Lang; page: PageId };
 const c = content[lang];
-const home = lang === 'nl' ? '/' : '/en/';
-const team = lang === 'nl' ? '/coaches/' : '/en/coaches/';
-const other = lang === 'nl' ? (page === 'home' ? '/en/' : '/en/coaches/') : (page === 'home' ? '/' : '/coaches/');
-const items: [string, string][] = [['retreats', c.nav.retreats], ['about', c.nav.about], ['offer', c.nav.offer], ['training', c.nav.training], ['story', c.nav.story]];
+const home = paths.home[lang];
+const team = paths.team[lang];
+const storyPath = paths.story[lang];
+const other = paths[page][lang === 'nl' ? 'en' : 'nl'];
+const items: [string, string][] = [['retreats', c.nav.retreats], ['about', c.nav.about], ['offer', c.nav.offer], ['training', c.nav.training]];
 ---
 <header class="site" id="top">
   <a class="logo" href={page === 'home' ? '#intro' : home} aria-label="Grounded Climbing"><Icon name="logo" /> Grounded Climbing</a>
   <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   <nav class="main" id="nav">
     {items.map(([id, t]) => <a href={`${home}#${id}`} data-nav={id}>{t}</a>)}
+    <a href={storyPath} data-nav="story" class:list={[page === 'story' && 'active']} aria-current={page === 'story' ? 'page' : undefined}>{c.nav.story}</a>
     <a href={team} class:list={[page === 'team' && 'active']} aria-current={page === 'team' ? 'page' : undefined}>{c.nav.team}</a>
     <a href={`${home}#contact`} data-nav="contact">{c.nav.contact}</a>
     <a class="lang" href={other} hreflang={lang === 'nl' ? 'en' : 'nl'} lang={lang === 'nl' ? 'en' : 'nl'} aria-label={c.switch.label}>{c.switch.to}</a>
