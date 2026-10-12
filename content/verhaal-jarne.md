@@ -44,13 +44,13 @@ Ik geloof dat avontuur ons dichter bij onszelf en bij elkaar kan brengen. Dat we
 
 Daarom wil ik met Grounded Climbing werken vanuit drie eenvoudige waarden:
 
-**Play. Grow. Trust.**
+**Play. Trust. Grow.**
 
 **Play** — plezier maken, experimenteren en de speelsheid van bewegen terugvinden. Niet alles hoeft een prestatie te zijn.
 
-**Grow** — jezelf uitdagen, nieuwe dingen ontdekken en stap voor stap groeien. Op jouw tempo, met ruimte om fouten te maken en opnieuw te proberen.
-
 **Trust** — vertrouwen opbouwen in jezelf, je lichaam en de mensen rondom je. Een omgeving creëren waarin je jezelf kunt zijn, vragen mag stellen en uitdagingen kunt aangaan zonder iets te moeten bewijzen.
+
+**Grow** — jezelf uitdagen, nieuwe dingen ontdekken en stap voor stap groeien. Op jouw tempo, met ruimte om fouten te maken en opnieuw te proberen.
 
 Dat wil ik doen via persoonlijke klimcoaching, buitendagen, retreats en avonturen in de natuur. Met persoonlijke aandacht, respect voor ieders grenzen en vooral veel goesting om samen op pad te gaan.
 
