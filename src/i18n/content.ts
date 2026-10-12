@@ -209,6 +209,6 @@ const en: typeof nl = {
 };
 
 export const content = { nl, en };
-// TODO: echte nummer en Instagram-handle controleren
+// TODO: echt WhatsApp-nummer invullen
 export const WHATSAPP = 'https://wa.me/32000000000';
-export const INSTAGRAM = 'https://instagram.com/grounded.climbing';
+export const INSTAGRAM = 'https://www.instagram.com/grounded.climbing/';

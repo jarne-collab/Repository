@@ -18,7 +18,7 @@ npm run build    # statische site in dist/
 - Foto's: grijze/groene vlakken (`.photo`) vervangen door `<img>` zodra de Drive-map met foto's klaar is
 - Echte retreats, data en prijzen; aanbodkaarten
 - Twee cijfers en tekst voor "Over mij"; bio's Jarne, Pauline, Caro (akkoord nodig)
-- WhatsApp-nummer en Instagram-handle controleren
+- WhatsApp-nummer invullen (Instagram is gekoppeld)
 - Domeinnaam (staat nu op `groundedclimbing.example` in `astro.config.mjs`)
 - Lettertype (nu Inter Tight als placeholder)
 - Contactformulier koppelen aan een dienst (nu geen backend)
