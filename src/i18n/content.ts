@@ -37,7 +37,7 @@ const nl = {
   },
   about: {
     label: 'Over mij',
-    title: 'Ik begeleid je op een weg die ik zelf nog afleg.',
+    title: 'Met passie voor avontuur en oog voor de persoon begeleid ik je om te groeien, vertrouwen op te bouwen en je eigen grenzen te verkennen.',
     // Korte versie uit Jarnes eigen verhaal (content/verhaal-jarne.md); kan nog aangepast worden
     text: 'Hey, ik ben Jarne. Ik word gelukkig van bewegen, buiten zijn en samen met anderen op avontuur gaan. Sinds 2014 begeleid ik mensen in de bergen, vooral bij canyoning, maar ook bij klimmen en via ferrata. Klimmen is mijn ankerpunt: de ruis in mijn hoofd wordt zachter. Grounded is voor mij geen eindpunt, maar een weg.',
     stats: [{ v: `${YEARS}`, l: 'jaar begeleiding in de bergen' }, { v: '5', l: 'diploma’s en brevetten' }],
@@ -160,7 +160,7 @@ const en: typeof nl = {
   },
   about: {
     label: 'About me',
-    title: 'I guide you on a road I am still walking myself.',
+    title: 'With a passion for adventure and an eye for the person, I guide you to grow, build trust and explore your own limits.',
     text: 'Hey, I’m Jarne. Moving, being outdoors and heading out on adventures with others makes me happy. Since 2014 I have guided people in the mountains, mostly canyoning, but also climbing and via ferrata. Climbing is my anchor: the noise in my head gets quieter. For me, grounded is not a destination, but a road.',
     stats: [{ v: `${YEARS}`, l: 'years guiding in the mountains' }, { v: '5', l: 'diplomas and certificates' }],
     photo: 'Portrait Jarne',
