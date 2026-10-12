@@ -171,3 +171,7 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 /* Reveal (alleen met JS) */
 .js .reveal { opacity: 0; transform: translateY(30px); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .reveal { opacity: 1; transform: none; } .scroll-cue span { animation: none; } }
+
+/* Intro: foto-uitsnede en leesbaarheid van menu boven de foto's */
+#intro .photo img { object-position: 28% center; }
+#intro::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 160px; z-index: 1; background: linear-gradient(180deg, rgba(20,32,25,.65), transparent); pointer-events: none; }
