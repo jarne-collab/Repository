@@ -44,7 +44,7 @@ const nl: Story = {
       paras: [
         'Na enkele jaren onderweg te zijn geweest, keerde ik terug naar België om hier opnieuw een leven op te bouwen. Ik kwam terecht in een job waar ik de kans kreeg om een jeugdteam uit te bouwen. Een droom die heel dicht bij mijn hart lag en waar ik met veel enthousiasme aan begon.',
       ],
-      photo: { label: 'Foto: terug in België' },
+      photo: { label: 'Terug in België', src: '/img/story-terug.jpg', alt: 'Zicht op een klimmuur met gekleurde grepen, vanuit zittend perspectief tussen twee benen', portrait: true },
     },
     {
       id: 'vertragen', label: 'Vertragen', title: 'Even een stap terug',
@@ -115,7 +115,7 @@ const en: Story = {
       paras: [
         'After a few years on the road, I returned to Belgium to build a life here again. I ended up in a job where I got the chance to build up a youth team. A dream very close to my heart, which I started with a lot of enthusiasm.',
       ],
-      photo: { label: 'Photo: back in Belgium' },
+      photo: { label: 'Back in Belgium', src: '/img/story-terug.jpg', alt: 'View of a climbing wall with coloured holds, seen from a seated position between two legs', portrait: true },
     },
     {
       id: 'vertragen', label: 'Slowing down', title: 'Taking a step back',
