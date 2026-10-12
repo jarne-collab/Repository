@@ -235,3 +235,6 @@ footer { padding: 3rem var(--gutter); display: flex; justify-content: space-betw
 .closing-name { font-size: clamp(2.6rem, 9vw, 7.5rem); }
 .closing-tag { font-size: clamp(1.4rem, 3vw, 2.4rem); font-style: italic; margin-top: 1.2rem; }
 @media (max-width: 800px) { .chapter .photo { position: relative; top: auto; } .chapter .split.flip .photo { order: 0; } .chapter .photo + .chapter-text { margin-top: 1rem; } }
+
+.chapter .photo.portrait { aspect-ratio: 3/4; }
+.chapter .photo.portrait img { object-position: 50% 50%; object-fit: cover; }

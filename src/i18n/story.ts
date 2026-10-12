@@ -7,7 +7,7 @@ export type Chapter = {
   label: string;
   title: string;
   paras: string[];
-  photo?: { label: string; src?: string; alt?: string };
+  photo?: { label: string; src?: string; alt?: string; portrait?: boolean };
 };
 
 type Story = {
@@ -37,7 +37,7 @@ const nl: Story = {
         'Ik ben iemand die gelukkig wordt van bewegen, buiten zijn en samen met anderen op avontuur gaan. De natuur geeft me rust en vrijheid, maar zet me ook regelmatig met beide voeten op de grond. Wanneer je in de Himalaya naast een gigantische bergwand staat of afdaalt van een waterval van 200 meter, besef je toch even hoe klein je als mens bent. En hoe relatief sommige dingen zijn waar we ons in het dagelijkse leven zo druk over maken.',
         'Mijn liefde voor avontuur bracht me in 2018 bij Mountain Moments, een organisatie die avontuurlijke reizen organiseert voor kinderen, jongeren, gezinnen en volwassenen. Een van de mooiste organisaties waarvoor ik ooit gewerkt heb. Ik vond er veel van wat mij energie geeft: buiten zijn, samen dingen beleven, mensen verbinden en anderen helpen om hun eigen grenzen te verkennen. Ik hoop dat daar in de toekomst nog mooie avonturen bij komen.',
       ],
-      photo: { label: 'Foto: onderweg (Himalaya of waterval)' },
+      photo: { label: 'Onderweg', src: '/img/story-onderweg.jpg', alt: 'Jarne hangt aan een touw naast een hoge waterval in een groene kloof', portrait: true },
     },
     {
       id: 'terug', label: 'Terug in België', title: 'Een droom die dicht bij mijn hart lag',
@@ -108,7 +108,7 @@ const en: Story = {
         'I’m someone who is happy when moving, being outdoors and heading out on adventures with others. Nature gives me calm and freedom, but it also regularly puts me firmly back on the ground. When you stand next to a gigantic mountain wall in the Himalayas or abseil down a 200-metre waterfall, you realise, even if just for a moment, how small you are as a human being. And how relative some of the things are that we worry about so much in daily life.',
         'My love of adventure brought me to Mountain Moments in 2018, an organisation that runs adventure trips for children, young people, families and adults. One of the best organisations I have ever worked for. There I found much of what gives me energy: being outdoors, experiencing things together, connecting people and helping others explore their own limits. I hope more great adventures will follow in the future.',
       ],
-      photo: { label: 'Photo: on the way (Himalayas or waterfall)' },
+      photo: { label: 'On the way', src: '/img/story-onderweg.jpg', alt: 'Jarne on a rope beside a tall waterfall in a green gorge', portrait: true },
     },
     {
       id: 'terug', label: 'Back in Belgium', title: 'A dream close to my heart',

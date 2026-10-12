@@ -24,7 +24,7 @@ const md = (t: string) => t.replace(/\*(.+?)\*/g, '<em>$1</em>');
   {s.chapters.map((ch, i) => (
     <section class={`chapter ${i % 2 === 0 ? 'light' : 'dark'}`} id={ch.id}>
       <div class={`wrap split ${i % 2 === 1 ? 'flip' : ''}`}>
-        <div class="photo warm" data-label={ch.photo?.label}>{ch.photo?.src && <img src={ch.photo.src} alt={ch.photo.alt} width="1800" height="1350" loading="lazy" />}</div>
+        <div class={`photo warm ${ch.photo?.portrait ? 'portrait' : ''}`} data-label={ch.photo?.label}>{ch.photo?.src && <img src={ch.photo.src} alt={ch.photo.alt} width={ch.photo.portrait ? 1400 : 1800} height={ch.photo.portrait ? 1867 : 1350} loading="lazy" />}</div>
         <div class="chapter-text">
           <div class="label reveal"><Icon name="star" />0{i + 1} — {ch.label}</div>
           <h2 class="reveal">{ch.title}</h2>
