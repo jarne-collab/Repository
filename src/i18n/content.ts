@@ -40,6 +40,8 @@ const nl = {
     text: 'Ik ben Jarne. Klimmen werd mijn houvast, en later mijn manier om anderen te laten ervaren wat vertrouwen en speelsheid in beweging kan betekenen.',
     stats: [{ v: '00', l: 'Cijfer 1 — TODO' }, { v: '00', l: 'Cijfer 2 — TODO' }],
     photo: 'Portret Jarne',
+    image: '/img/about-jarne.jpg',
+    alt: 'Jarne lacht in een gele jas met rugzak en wandelstokken in de bergen',
   },
   offer: {
     label: 'Aanbod',
@@ -160,6 +162,8 @@ const en: typeof nl = {
     text: 'I’m Jarne. Climbing became my anchor, and later my way of helping others feel what trust and playfulness in movement can mean.',
     stats: [{ v: '00', l: 'Figure 1 — TODO' }, { v: '00', l: 'Figure 2 — TODO' }],
     photo: 'Portrait Jarne',
+    image: '/img/about-jarne.jpg',
+    alt: 'Jarne laughing in a yellow jacket with backpack and trekking poles in the mountains',
   },
   offer: {
     label: 'Offer',
