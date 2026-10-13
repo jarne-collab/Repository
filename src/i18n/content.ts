@@ -74,6 +74,11 @@ const nl = {
       { t: 'Klimanalyse', d: 'We bekijken hoe jij beweegt op de muur: techniek, voetenwerk en efficiëntie.' },
       { t: 'Klimmen & reflecteren', d: 'We klimmen, kijken terug en sturen bij. Geen graden als maatstaf.' },
     ],
+    optionsTitle: 'Twee manieren om te starten',
+    options: [
+      { tag: 'Startpakket', title: 'Klimcoaching met Jarne', text: 'Een intake, een klimsessie en een trainingsschema op maat. Zo starten we samen met wat jij wilt bereiken.', cta: 'Vraag meer info' },
+      { tag: 'Samen met Maud', title: 'Klimscreening en coaching', text: 'Eerst een klimscreening bij Maud van Crux Kinesitherapie, met aandacht voor je sterktes, aandachtspunten en blessurepreventie. Daarna bekijk ik hoe je klimt en bouw ik een trainingsschema op maat, dat rekening houdt met wat jouw lichaam nodig heeft.', cta: 'Vraag meer info' },
+    ],
   },
   booking: {
     label: 'Boeken',
@@ -189,6 +194,11 @@ const en: typeof nl = {
       { t: 'Your plan', d: 'A programme built around you, in waves with room for rest.' },
       { t: 'Climbing analysis', d: 'We look at how you move on the wall: technique, footwork and efficiency.' },
       { t: 'Climb & reflect', d: 'We climb, look back and adjust. Grades are not the yardstick.' },
+    ],
+    optionsTitle: 'Two ways to start',
+    options: [
+      { tag: 'Starter package', title: 'Climbing coaching with Jarne', text: 'An intake, a climbing session and a training plan made for you. We start from what you want to achieve.', cta: 'Ask for more info' },
+      { tag: 'Together with Maud', title: 'Climbing screening and coaching', text: 'First a climbing screening with Maud of Crux Kinesitherapie, looking at your strengths, focus points and injury prevention. Then I look at how you climb and build a training plan made for you, one that takes into account what your body needs.', cta: 'Ask for more info' },
     ],
   },
   booking: {

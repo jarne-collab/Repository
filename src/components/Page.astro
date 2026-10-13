@@ -103,6 +103,17 @@ const metaIcons = ['pin', 'cal', 'group', 'star'];
       <div class="label"><Icon name="star" />{c.training.label}</div>
       <h2 class="reveal">{c.training.title}</h2>
       <ol class="steps">{c.training.steps.map((s, i) => <li class="reveal"><Icon name={stepIcons[i]} /><h3>{s.t}</h3><p>{s.d}</p></li>)}</ol>
+      <h3 class="pt-options-title reveal">{c.training.optionsTitle}</h3>
+      <div class="pt-options">
+        {c.training.options.map((o) => (
+          <article class="pt-option reveal">
+            <span class="tag">{o.tag}</span>
+            <h3>{o.title}</h3>
+            <p>{o.text}</p>
+            <a class="btn" href="#contact">{o.cta}</a>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
