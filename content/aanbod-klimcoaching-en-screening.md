@@ -1,6 +1,14 @@
-# Aanbod: klimcoaching, klimscreening en samenwerkingspakket
+# Aanbod: personal training klimmen (PT) — coaching, screening en gecombineerd traject
 
-*Interne bron, niet op de site. **Alle prijzen zijn nog niet definitief** ("de prijzen moeten nog bepaald worden").*
+*Interne bron, niet op de site. **Prijzen worden later bepaald**; de bedragen hieronder zijn alleen een eerste idee uit een gesprek.*
+
+## Structuur
+
+Alles valt onder **personal training (PT)** op de site. Er zijn drie opties:
+
+1. **Startpakket klimcoaching (Jarne):** intake, klimcoaching en een trainingsschema op maat. Bestaat al.
+2. **Klimscreening (Maud, Crux Kinesitherapie):** de klimscreenings die Maud al doet.
+3. **Gecombineerd traject:** beide samen, nieuw. De klimmer kan elk onderdeel ook los nemen.
 
 ## Wie doet wat
 
@@ -36,5 +44,5 @@ Idee: een bibliotheek met oefeningen, trainingsblokken en sjablonen (techniek, m
 ## Nog te bepalen
 
 - [ ] Definitieve prijzen en of het samenwerkingspakket op de site komt
-- [ ] Hoe samengewerkt wordt: elk eigen praktijk met doorverwijzing, of één gezamenlijk traject (dat bepaalt facturatie en rapportage)
+- [ ] Facturatie en rapportage van het gecombineerde traject (elk apart of één factuur)
 - [ ] Akkoord van Maud voor naam, foto en vermelding van het pakket
