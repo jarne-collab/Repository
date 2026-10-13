@@ -4,7 +4,9 @@
 
 ## Samenwerking
 
-Jarne en Maud werken samen rond klimscreenings. Op de site staat Maud voorlopig alleen op de coachespagina (niet op de homepage en nog niet bij het aanbod).
+Maud (Maud Teerlinck, Crux Kinesitherapie, Gent) doet de klimscreenings zelf, binnen haar eigen praktijk. Jarne komt daarna en kijkt technisch naar de klimmer en stelt het trainingsschema op. Zie `aanbod-klimcoaching-en-screening.md` voor het samenwerkingsaanbod.
+
+Op de site staat Maud voorlopig alleen op de coachespagina (niet op de homepage en nog niet bij het aanbod). Haar achternaam staat niet op de site, tot Maud akkoord geeft.
 
 ## Bio (staat op de site)
 
